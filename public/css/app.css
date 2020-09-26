@@ -1,0 +1,29 @@
+.error-text {
+color: red !important;
+font-size: 13px !important;
+}
+
+.price {
+    color: green;
+}
+img.thumb {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    
+}
+img.thumb-small {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    
+}
+img.thumb-xsmall {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  
+}
