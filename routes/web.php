@@ -95,6 +95,10 @@ Route::prefix('/admin')->group(function() {
     });
 });
 
+//tests
+Route::get('test/check-balance', 'TestController@checkClubKashBalance');
+
+
 
 //Reoptimized class loader:
 Route::get('/optimize', function() {

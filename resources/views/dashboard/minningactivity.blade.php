@@ -174,7 +174,7 @@
         }
     //console.log("units "+units);
     var handler = PaystackPop.setup({
-      key: 'pk_test_a6885571cce91d1f14a45ef556f53cec4af6e433',
+      key: 'pk_live_97944b5500b4fa5de6f5d8ba255432c4e2c7f648',
       email: '{{ Auth::user()->email }}',
       amount:  amount * 100,
       currency: "NGN",
