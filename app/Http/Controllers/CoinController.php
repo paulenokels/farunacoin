@@ -18,6 +18,7 @@ class CoinController extends Controller
 {
     //
     public $systemAddress = "9FHIWNESTXKY7ZMA4STQSADZM6IQDHFHKEJYH2LUZT";
+    public $networkFeeAddress ="9FOFWT8OXZQBJBU4QEHVMPG9YNJDL1Q0";
 
     public function purchasePage() {
         $price = Settings::where('setting','coin_price')->select('value')->first()->value;
@@ -75,6 +76,10 @@ class CoinController extends Controller
         }
 
         else {
+            //deduct network fee
+            $networkFee = $this->calculateNetworkFee($amount);
+            WalletUtil::sendFAC($senderAddress, $this->networkFeeAddress, $networkFee, 'NETWORK-FEE', Str::random(10));
+
             //send coins
             WalletUtil::sendFAC($senderAddress, $receiverAddress, $amount, 'TRANSFER', Str::random(10));
             return redirect('dash/coin/transfer')->with('success', 'Transfer successful');
@@ -82,6 +87,10 @@ class CoinController extends Controller
 
         }
 
+    }
+
+    private function calculateNetworkFee($amount) {
+        return (3/100) * $amount;
     }
 
     public function receivePage() {

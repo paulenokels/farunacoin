@@ -50,8 +50,8 @@
       <div class="card-body">
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (USD) </div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">${{ Auth::user()->coin_balance * $coinPrice }}</div>
+            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (NGN) </div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">&#8358;{{ Auth::user()->coin_balance * $coinPrice }}</div>
           </div>
           <div class="col-auto">
             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>

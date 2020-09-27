@@ -47,6 +47,7 @@
             </div>
 
             <p style="padding: 10px; color: orange">Faruna coin wallet address is a 32 digit number beginning with "9F" </p>
+            <p style="padding: 10px; color: red">NOTE: All transfers attract network fee of 3% </p>
                 
             <div class="form-row">
                 <div class="col-md-6">
