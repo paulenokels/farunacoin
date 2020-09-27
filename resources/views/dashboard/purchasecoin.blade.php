@@ -85,8 +85,7 @@
         var price = parseInt('{{ $price }}');
 
         $('input[name="units"]').keyup(function(e) {
-             units = parseInt(e.target.value);
-            
+             units = parseFloat(e.target.value);
              amount = price * units;
             if (units > 0) {
                 $('p.amount').html('Amount to pay = <span class=price>'+formatCurrency(amount)+'</span>').show();

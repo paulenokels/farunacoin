@@ -350,7 +350,6 @@
 			<section class="section">
 				<div class="grid grid--container">
 					<div class="section-heading section-heading--center  col-MB-60">
-						<h5 class="__subtitle">Our service is built on Ethereum Blockchain </h5>
 
 						<h2 class="__title">Coin information</h2>
 					</div>
@@ -517,7 +516,7 @@
 										<article>
 											<div class="__inner">
 												<p>
-													When the coin reserve reaches $1 million (USD) Faruna becomes spendable by the general public
+													When the coin reserve reaches $1 million (USD), Faruna coin becomes spendable by the general public
 												</p>
 
 											

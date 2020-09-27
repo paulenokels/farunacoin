@@ -99,10 +99,10 @@
 
                 </p>
                 <h5 class="card-title text-muted text-uppercase text-center">1 GB</h5>
-                <h6 class="card-price text-center">N330</h6>
+                <h6 class="card-price text-center">N530</h6>
                 <hr />
                
-                <p class="btn btn-block btn-primary text-uppercase" data-price="330" data-network-code="01" data-plan-size="1000">Purchase</p>
+                <p class="btn btn-block btn-primary text-uppercase" data-price="530" data-network-code="01" data-plan-size="1000">Purchase</p>
             </div>
         </div>
 </div>
@@ -118,10 +118,10 @@
 
                 </p>
                 <h5 class="card-title text-muted text-uppercase text-center">2 GB</h5>
-                <h6 class="card-price text-center">N660</h6>
+                <h6 class="card-price text-center">N850</h6>
                 <hr />
                
-                <p class="btn btn-block btn-primary text-uppercase" data-price="660" data-network-code="01" data-plan-size="2000">Purchase</p>
+                <p class="btn btn-block btn-primary text-uppercase" data-price="850" data-network-code="01" data-plan-size="2000">Purchase</p>
             </div>
         </div>
     </div>
@@ -136,92 +136,17 @@
                 <img src="{{ asset('img/mtn-logo.jpg') }}" width="150" height="100" />
 
                 </p>
-                <h5 class="card-title text-muted text-uppercase text-center">1 GB</h5>
-                <h6 class="card-price text-center">N330</h6>
+                <h5 class="card-title text-muted text-uppercase text-center">5 GB</h5>
+                <h6 class="card-price text-center">N1,785</h6>
                 <hr />
                
-                <p class="btn btn-block btn-primary text-uppercase" data-price="330" data-network-code="01" data-plan-size="1000">Purchase</p>
+                <p class="btn btn-block btn-primary text-uppercase" data-price="1785" data-network-code="01" data-plan-size="5000">Purchase</p>
             </div>
         </div>
     </div>
 <!-- /.Pricing Column -->
 
 
-<!-- Pricing Column -->
-    <div class="pricing col-md-3 col-lg-3 col-sm-4">
-        <div class="card mb-5 mb-lg-0">
-            <div class="card-body">
-                <p class="text-center">
-                <img src="{{ asset('img/mtn-logo.jpg') }}" width="150" height="100" />
-
-                </p>
-                <h5 class="card-title text-muted text-uppercase text-center">1 GB</h5>
-                <h6 class="card-price text-center">N330</h6>
-                <hr />
-               
-                <p class="btn btn-block btn-primary text-uppercase" data-price="330" data-network-code="01" data-plan-size="1000">Purchase</p>
-            </div>
-        </div>
-    </div>
-<!-- /.Pricing Column -->
-</div>
-
-<div class="row" style="margin-top: 10px">
-<!-- Pricing Column -->
-    <div class="pricing col-md-3 col-lg-3 col-sm-4">
-        <div class="card mb-5 mb-lg-0">
-            <div class="card-body">
-                <p class="text-center">
-                <img src="{{ asset('img/mtn-logo.jpg') }}" width="150" height="100" />
-
-                </p>
-                <h5 class="card-title text-muted text-uppercase text-center">1 GB</h5>
-                <h6 class="card-price text-center">N330</h6>
-                <hr />
-               
-                <p class="btn btn-block btn-primary text-uppercase" data-price="330" data-network-code="01" data-plan-size="1000">Purchase</p>
-            </div>
-        </div>
-    </div>
-<!-- /.Pricing Column -->
-
-
-<!-- Pricing Column -->
-    <div class="pricing col-md-3 col-lg-3 col-sm-4">
-        <div class="card mb-5 mb-lg-0">
-            <div class="card-body">
-                <p class="text-center">
-                <img src="{{ asset('img/mtn-logo.jpg') }}" width="150" height="100" />
-
-                </p>
-                <h5 class="card-title text-muted text-uppercase text-center">1 GB</h5>
-                <h6 class="card-price text-center">N330</h6>
-                <hr />
-               
-                <p class="btn btn-block btn-primary text-uppercase" data-price="330" data-network-code="01" data-plan-size="1000">Purchase</p>
-            </div>
-        </div>
-    </div>
-<!-- /.Pricing Column -->
-
-
-<!-- Pricing Column -->
-    <div class="pricing col-md-3 col-lg-3 col-sm-4">
-        <div class="card mb-5 mb-lg-0">
-            <div class="card-body">
-                <p class="text-center">
-                <img src="{{ asset('img/mtn-logo.jpg') }}" width="150" height="100" />
-
-                </p>
-                <h5 class="card-title text-muted text-uppercase text-center">1 GB</h5>
-                <h6 class="card-price text-center">N330</h6>
-                <hr />
-               
-                <p class="btn btn-block btn-primary text-uppercase" data-price="330" data-network-code="01" data-plan-size="1000">Purchase</p>
-            </div>
-        </div>
-    </div>
-<!-- /.Pricing Column -->
 
 </div>
 

@@ -31,7 +31,7 @@
   <div class="row">
       <div class="col-12">
          <div class="alert alert-success" >
-            Welcome to Faruna coin mining. With a mining licence you get 0.3 Faruna coin daily. The cost of a mining licence is $30. The licence
+            Welcome to Faruna coin mining. With a mining licence you get 0.33 Faruna coin daily. The cost of a mining licence is $20. The licence
    is valid for 3 months after which renewal cost is $10. NOTE: There is no limit to the number of licences you can purchase.
          </div>
       </div>

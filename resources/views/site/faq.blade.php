@@ -77,7 +77,7 @@
 										<article>
 											<div class="__inner">
 												<p>
-													When the coin reserve reaches $1 million (USD) Faruna becomes spendable by the general public
+													When the coin reserve reaches $1 million (USD) Faruna coin becomes spendable by the general public
 												</p>
 
 											
