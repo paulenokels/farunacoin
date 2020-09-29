@@ -10,4 +10,7 @@ class DataPurchase extends Model
     use HasFactory;
 
     protected $table = 'data_purchase';
+    protected $fillable = ['user_id','network', 'phone_number', 'amount', 'status'];
+    public $timestamps = TRUE;
+
 }

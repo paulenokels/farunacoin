@@ -23,7 +23,7 @@ class DataPurchaseController extends Controller
         $verifyPayment = PaymentVerifier::verifyPaystackPayment($request->reference);
         if ($verifyPayment) {
             DataBundleUtil::purchaseBundle($request->network_code, $request->plan_size, $request->phone_number, $request->reference);
-            DataPurchase::insert([
+            DataPurchase::create([
                 'user_id' => Auth::user()->id,
                 'network' => 'MTN',
                 'phone_number' => $request->phone_number,
