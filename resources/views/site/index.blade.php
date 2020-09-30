@@ -147,9 +147,9 @@
 						<div class="__video" style="max-width: 770px;">
 							<div class="__wrp">
 								<div class="embed-responsive">
-									<div class="__bg embed-responsive-item lazy" data-src="img/video_bg_1.jpg">
+									<div class="__bg embed-responsive-item lazy" data-src="img/faruna_marvelous.jpeg">
 										<div class="__btn_wrp">
-											<a class="__play-btn  circled" data-fancybox href="http://player.vimeo.com/video/44309170"></a>
+											<a class="__play-btn  circled" data-fancybox href="https://youtu.be/4p5aFCwvTzI"></a>
 
 											<span class="__desc">Video Presentation</span>
 										</div>
