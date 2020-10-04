@@ -45,7 +45,7 @@
 											<div class="progress__inner">
 												<div class="__bar __bar--animate" style="width: 2%"></div>
 
-												<span class="__label" style="left: 2%"><strong>$20</strong></span>
+												<span class="__label" style="left: 2%"><strong>${{ $reserve_amount }}</strong></span>
 
 												<span class="__max-val" style="line-height: 19px;"><strong>50K MIN</strong></span>
 											</div>
