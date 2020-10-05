@@ -52,7 +52,7 @@
 
 											<span class="soft-cap">SOFT CAP</span>
 
-											<span class="note fl-r" style="padding-top: 8px">Total raised: $20</span>
+											<span class="note fl-r" style="padding-top: 8px">Total raised: ${{ $reserve_amount }}</span>
 										</div>
 										<!-- end progress -->
 
@@ -409,7 +409,7 @@
 										</div>
 
 										<div class="cell v-middle">
-											<h5>FAC Reserve : $20 USD</h5>
+											<h5>FAC Reserve : ${{$reserve_amount }} USD</h5>
 										</div>
 									</div>
 								</div>

@@ -15,7 +15,7 @@ class PaymentVerifier {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt(
         $ch, CURLOPT_HTTPHEADER, [
-            'Authorization: Bearer sk_live_99376caa69ac6ad68ad6b22079b2d75c69be6fd7']
+            'Authorization: Bearer sk_test_4d3f2a1b359b03db0804f134960c24c5cbd55547']
         );
         $request_ = curl_exec($ch);
         if(curl_error($ch)){

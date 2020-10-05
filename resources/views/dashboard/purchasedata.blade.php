@@ -178,10 +178,10 @@
   </div>
 </div>
 <script>
-        var amount = 0;
-        var phoneNumber = "";
-        var networkCode = "01";
-        var planSize =  0;
+    var amount = 0;
+    var phoneNumber = "";
+    var networkCode = "01";
+    var planSize =  0;
 
 
     $(document).ready(function() {
@@ -242,18 +242,25 @@
 
                if (res.success) {
                 
-               $('.modal-body').html("<div style='text-align:center'><p class='success'><i class='fa fa-check'></i> Coin purchase was succesful. You will be redirected</p></div>");
-                window.location = "{{ url('dash') }}"
+                $('.modal-body').html("<div style='text-align:center'><p class='success'><i class='fa fa-check'></i> Coin purchase was succesful. You will be redirected to your dashboard in <span style='color: red; font-weight: bold' class='redirect-countdown'></span></p></div>");
+               let countDown =  3;
+                let countDownInterval = setInterval(() => {
+                  if (countDown == -1) {
+                    clearInterval(countDownInterval);
+                    return;
+                  }
+                  $('span.redirect-countdown').html(countDown);
+                  --countDown;
+                }, 1000);
+                setTimeout(function(){ clearInterval(countDownInterval); window.location = "{{ url('dash') }}"}, 5000);
                }
                else {
                $('.modal-body').html("<div style='text-align:center'><p class='error'>"+res.msg+"</p></div>");
-
                }
             }
             else {
                $('.modal-body').html("<div style='text-align:center'><p class='error'>Network Error. check your connection and try again, if you have already been debited, <a href='{{ url('support') }}'>please contact support</a></p></div>");
                $('button.close-btn').show();
-               
             }
             },
             error: function(error) {

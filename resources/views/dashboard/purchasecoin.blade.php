@@ -105,7 +105,7 @@
         }
     //console.log("units "+units);
     var handler = PaystackPop.setup({
-      key: 'pk_live_97944b5500b4fa5de6f5d8ba255432c4e2c7f648',
+      key: 'pk_test_a6885571cce91d1f14a45ef556f53cec4af6e433',
       email: '{{ Auth::user()->email }}',
       amount:  amount * 100,
       currency: "NGN",
@@ -142,12 +142,20 @@
 
                if (res.success) {
                 
-               $('.modal-body').html("<div style='text-align:center'><p class='success'><i class='fa fa-check'></i> Coin purchase was succesful. You will be redirected</p></div>");
-                window.location = "{{ url('dash') }}"
+                $('.modal-body').html("<div style='text-align:center'><p class='success'><i class='fa fa-check'></i> Coin purchase was succesful. You will be redirected to your dashboard in <span style='color: red; font-weight: bold' class='redirect-countdown'></span></p></div>");
+                let countDown =  3;
+                let countDownInterval = setInterval(() => {
+                  if (countDown == -1) {
+                    clearInterval(countDownInterval);
+                    return;
+                  }
+                  $('span.redirect-countdown').html(countDown);
+                  --countDown;
+                }, 1000);
+                setTimeout(function(){ clearInterval(countDownInterval); window.location = "{{ url('dash') }}"}, 5000);
                }
                else {
-               $('.modal-body').html("<div style='text-align:center'><p class='error'>"+res.msg+"</p></div>");
-
+                $('.modal-body').html("<div style='text-align:center'><p class='error'>"+res.msg+"</p></div>");
                }
             }
             else {
