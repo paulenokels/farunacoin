@@ -72,6 +72,10 @@ Route::prefix('/admin')->group(function() {
         //AJAX CALL
     Route::post('user/status/update', 'UserController@updateUserStatus');
 
+            //AJAX CALL
+    Route::post('user/ambassador/update', 'UserController@updateAmbassadorStatus');
+
+
     Route::get('settings', 'SettingsController@index');
     Route::post('settings', 'SettingsController@update');
 

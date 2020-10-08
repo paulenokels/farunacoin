@@ -89,67 +89,19 @@
 </div>
 <div class="row">
 
-      
-<!-- Pricing Column -->
-    <div class="pricing col-md-3 col-lg-3 col-sm-4">
-        <div class="card mb-5 mb-lg-0">
-            <div class="card-body">
-                <p class="text-center">
-                <img src="{{ asset('img/mtn-logo.jpg') }}" width="150" height="100" />
-
-                </p>
-                <h5 class="card-title text-muted text-uppercase text-center">1 GB</h5>
-                <h6 class="card-price text-center">N530</h6>
-                <hr />
-               
-                <p class="btn btn-block btn-primary text-uppercase" data-price="530" data-network-code="01" data-plan-size="1000">Purchase</p>
-            </div>
-        </div>
-</div>
-<!-- /.Pricing Column -->
-
-
-<!-- Pricing Column -->
-    <div class="pricing col-md-3 col-lg-3 col-sm-4">
-        <div class="card mb-5 mb-lg-0">
-            <div class="card-body">
-                <p class="text-center">
-                <img src="{{ asset('img/mtn-logo.jpg') }}" width="150" height="100" />
-
-                </p>
-                <h5 class="card-title text-muted text-uppercase text-center">2 GB</h5>
-                <h6 class="card-price text-center">N850</h6>
-                <hr />
-               
-                <p class="btn btn-block btn-primary text-uppercase" data-price="850" data-network-code="01" data-plan-size="2000">Purchase</p>
-            </div>
-        </div>
-    </div>
-<!-- /.Pricing Column -->
-
-
-<!-- Pricing Column -->
-    <div class="pricing col-md-3 col-lg-3 col-sm-4">
-        <div class="card mb-5 mb-lg-0">
-            <div class="card-body">
-                <p class="text-center">
-                <img src="{{ asset('img/mtn-logo.jpg') }}" width="150" height="100" />
-
-                </p>
-                <h5 class="card-title text-muted text-uppercase text-center">5 GB</h5>
-                <h6 class="card-price text-center">N1,785</h6>
-                <hr />
-               
-                <p class="btn btn-block btn-primary text-uppercase" data-price="1785" data-network-code="01" data-plan-size="5000">Purchase</p>
-            </div>
-        </div>
-    </div>
-<!-- /.Pricing Column -->
-
-
-
+  <x-data.mtndata />
 </div>
 
+<div class="row" style="margin-top: 10px">
+  <x-data.airteldata />
+</div>
+
+<div class="row" style="margin-top: 10px">
+  <x-data.glodata />
+</div>
+<div class="row" style="margin-top: 10px">
+  <x-data.9mobiledata />
+</div>
 
 
 
@@ -189,6 +141,7 @@
         $('.pricing .btn').on("click", function() {
              amount = $(this).attr('data-price');
              networkCode = $(this).attr('data-network-code');
+             network = $(this).attr('data-network');
              planSize = $(this).attr('data-plan-size');
              phoneNumber = $('input[name=phone_number').val();
              if (!phoneNumber) {
@@ -231,6 +184,7 @@
             "reference" : response.reference,
             "phone_number": phoneNumber,
             "network_code": networkCode,
+            "network":network,
             "plan_size": planSize,
             },
             type: 'POST',

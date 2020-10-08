@@ -51,6 +51,13 @@ class RegisterController extends Controller
 
         ];
             $this->validateRequest($request);
+
+            if ($request->amb_code) {
+                $validateAmbCode = User::where('amb_code',$request->amb_code)->first();
+                if ($validateAmbCode) {
+                    $newUserData['registration_amb_code'] = $request->amb_code;
+                }
+            }
        
         $user = User::create($newUserData);
 

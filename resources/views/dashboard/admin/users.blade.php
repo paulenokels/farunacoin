@@ -48,6 +48,12 @@
                             <button class="btn btn-success action-btn btn-sm activate-btn">Activate User</button>
 
                         @endif
+                        @if($user->amb_code)
+                            <button class="btn btn-primary btn-sm disabled">Ambassador Code: {{ $user->amb_code }}</button>
+                        @else
+                            <button class="btn btn-success action-btn btn-sm make-ambassador-btn">Make Ambassador</button>
+
+                        @endif
                     </div>
                 </div>
             </div>
@@ -106,6 +112,13 @@ function showActionModal() {
        url = "{{ url('admin/user/status/update?status=SUSPENDED') }}";
 
     }
+
+    else if ($actionButton.hasClass('make-ambassador-btn')) {
+        $('.modal-title').text('Make User Ambassador');
+        $('.modal-body').text('Are you sure you want to this user an Ambassador on Faruna Coin?');
+       url = "{{ url('admin/user/ambassador/update?status=1') }}";
+
+    }
     //we are activating users
     else {
         $('.modal-title').text('Activate User');
@@ -134,6 +147,7 @@ function showActionModal() {
             if(typeof res !== undefined ) {
                res = JSON.parse(res);
                console.log(res);
+               window.res = res;
 
                if (res.success) {
                $('.modal-body').html("<div style='text-align:center'><p class='success'>User updated successfully</p></div>");
@@ -167,8 +181,15 @@ function showActionModal() {
           $('span.user-status').text('SUSPENDED');
        
     }
+    else if ($actionButton.hasClass('make-ambassador-btn')) {
+        $actionButton.removeClass(['make-ambassador-btn', 'action-btn', 'btn-success']).addClass(['btn-primary', 'disabled']).text('Ambassador Code : '+window.res.ambassadorCode);
+        $('span.user-status').text('ACTIVE');
+
+       
+
+    }
     
-    else {
+    else if ($actionButton.hasClass('activate-btn')) {
         $actionButton.removeClass(['activate-btn', 'btn-success']).addClass(['suspend-btn', 'btn-danger']).text('Suspend User');
         $('span.user-status').text('ACTIVE');
 

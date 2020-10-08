@@ -30,6 +30,16 @@ class CoinController extends Controller
         $verifyPayment = PaymentVerifier::verifyPaystackPayment($request->reference);
         if ($verifyPayment) {
             WalletUtil::sendFAC($this->systemAddress, Auth::user()->fac_wallet_address, $request->units, 'PAYSTACK-PURCHASE', $request->reference);
+           
+            //check if user registered with via an ambassador
+            $registrationAmbCode = Auth::user()->registration_amb_code;
+            if ($registrationAmbCode) {
+                //credit ambassador with 10% of the total coins purchased
+                $ambassadorWallet = User::where('amb_code', $registrationAmbCode)->select('fac_wallet_address')->first();
+                $ambCoins = ( 0.1 * $request->units);
+                WalletUtil::sendFAC($this->systemAddress, $ambassadorWallet->fac_wallet_address, $ambCoins, 'AMBASSADOR-BONUS', $request->reference);
+
+            }
             return \json_encode(['success'=>true]);
         }
         else{
@@ -99,7 +109,7 @@ class CoinController extends Controller
 
     public function transactionHistoryPage() {
         if (Auth::guard('admin')->user()) {
-            $transactions = Ledger::all();
+            $transactions = Ledger::orderBy('id', 'DESC')->get();
             return view('dashboard.admin.transactionhistory', ['transactions' => $transactions]);
         }
 

@@ -51,6 +51,13 @@
                     <input type="password" name="password_confirmation"  class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" required>
                   </div>
                 </div>
+                <div class="form-group row">
+                 
+                  <div class="col-sm-7 col-md-7">
+                    <label for="amCode">Ambassador Code (Optional)</label>
+                    <input type="text" name="amb_code" value="{{ old('amb_code') }}"  class="form-control form-control-user" id="ambCode" placeholder="Enter Ambassador Code if you have one">
+                  </div>
+                </div>
                 <input type="submit" value="Register Account" class="btn btn-primary btn-user btn-block">
               
                 <!-- <hr>
