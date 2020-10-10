@@ -22,7 +22,7 @@ class DataPurchaseController extends Controller
     public function confirmPayment(Request $request) {
         $verifyPayment = PaymentVerifier::verifyPaystackPayment($request->reference);
         if ($verifyPayment) {
-            DataBundleUtil::purchaseBundle($request->network_code, $request->plan_size, $request->phone_number, $request->reference);
+            $purchaseStatus = DataBundleUtil::purchaseBundle($request->network_code, $request->plan_size, $request->phone_number, $request->reference);
             DataPurchase::create([
                 'user_id' => Auth::user()->id,
                 'network' => $request->network,
@@ -38,10 +38,14 @@ class DataPurchaseController extends Controller
                 WalletUtil::sendFAC("9FHIWNESTXKY7ZMA4STQSADZM6IQDHFHKEJYH2LUZT", $ambassadorWallet->fac_wallet_address, 0.3, 'AMBASSADOR-BONUS', $request->reference);
 
             }
-            return \json_encode(['success'=>true]);
+            $msg = "Data purchase successful";
+            if ($purchaseStatus == FALSE) {
+                $msg = "Network Error while purchasing data. Please contact support on 08165384790 if you have been debited";
+            }
+            return \json_encode(['success'=>$purchaseStatus, 'msg' => $msg]);
         }
         else{
-            return \json_encode(['success'=>false, 'msg'=>"Transaction could not be confirmed. Please contact support if problem persists"]);
+            return \json_encode(['success'=>false, 'msg'=>"Your payment could not be confirmed. Please contact support if problem persists"]);
         }
 
     }

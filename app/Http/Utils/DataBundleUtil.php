@@ -31,12 +31,12 @@ class DataBundleUtil {
 
         }
        
-        if (array_key_exists('statuscode', $result) && $result['statuscode'] == '100') {
+        if ($result && array_key_exists('statuscode', $result) && $result['statuscode'] == '100') {
             
-            return TRUE;
+            return true;
         }
        
-        return FALSE;
+        return false;
     }
 
     public static function checkWalletBalance() {
