@@ -17,7 +17,18 @@ class UserController extends Controller
     public function usersPage() {
         $totalCount = User::count();
         $users = User::orderBy('id', 'DESC')->paginate(20);
-        Log::Info($users);
+        
+        return view ('dashboard.admin.users', ['users'=>$users, 'count' => $totalCount]);
+    }
+
+    //admin method
+    public function searchUsers(Request $request) {
+        $fullName = $request->full_name;
+        $query = User::where('full_name', 'like', "%$fullName%")->limit(25);
+        $users = $query->paginate(25);
+        $totalCount = $query->count();
+
+        Log::Info($fullName);
         
         return view ('dashboard.admin.users', ['users'=>$users, 'count' => $totalCount]);
     }

@@ -27,6 +27,19 @@
 
 <div class="section-content">
 @if(count($users))
+    <form method="POST" action="{{ url('admin/users/search') }}" style="margin-top: 10px; margin-bottom: 15px">
+    <h5>Search for user</h5>
+
+        @csrf
+        <div class="form-row">
+            <div class="col-8">
+                <input type="text" name="full_name" class="form-control" placeholder="Name of user">
+            </div>
+            <div class="col-3">
+                <input type="submit" class="form-control btn btn-success" value="Search">
+            </div>
+        </div>
+    </form>
         @foreach ($users as $user)
         <div class="card">
             <div class="card-body">

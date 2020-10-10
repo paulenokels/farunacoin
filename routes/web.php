@@ -69,6 +69,7 @@ Route::prefix('/admin')->group(function() {
     Route::group(['middleware' => 'auth:admin'], function() {
     Route::get('/', 'AdminController@index');
     Route::get('users', 'UserController@usersPage');
+    Route::post('users/search', 'UserController@searchUsers');
         //AJAX CALL
     Route::post('user/status/update', 'UserController@updateUserStatus');
 
