@@ -49,7 +49,7 @@
                 
             <div class="form-row">
                 <div class="col-md-6">
-                    <input  type="number" class="form-control" placeholder="Amount *" value="{{ old('amount') }}" name="amount" required>
+                    <input  type="number" step="any" class="form-control" placeholder="Amount *" value="{{ old('amount') }}" name="amount" required>
                 </div>
             </div>
 

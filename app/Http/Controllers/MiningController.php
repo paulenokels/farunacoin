@@ -19,7 +19,7 @@ class MiningController extends Controller
 
     public function minningActivityPage() {
         $user = Auth::user();
-        $transactions = Ledger::where(['receiver_address' =>  $user->fac_wallet_address, 'channel' => 'MINNING'])->get();
+        $transactions = Ledger::where(['receiver_address' =>  $user->fac_wallet_address, 'channel' => 'MINING'])->get();
        
         $miningAcount = Miners::where('user_id', $user->id)->get();
         $licencePrice = Settings::where('setting','licence_price')->select('value')->first()->value;

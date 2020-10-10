@@ -145,9 +145,18 @@
              planSize = $(this).attr('data-plan-size');
              phoneNumber = $('input[name=phone_number').val();
              if (!phoneNumber) {
-                 alert("Please provide a phone number");
+                 alert("Please provide a valid phone number");
                  return;
              }
+             //add 0 to phone number if length = 10.
+             if (phoneNumber.length == 10) {
+               phoneNumber = "0"+phoneNumber;
+             }
+             if (phoneNumber.length > 11) {
+                alert("Phone number too long, Please provide a valid phone number");
+                 return;
+             }
+             console.log(phoneNumber);
              payWithPaystack();
         });
 
