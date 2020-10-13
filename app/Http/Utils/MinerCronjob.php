@@ -28,12 +28,12 @@ class MinerCronjob {
         $miners = [];
         $query = $this->mysqli->query("SELECT user_id FROM `miners`");
         if (mysqli_num_rows($query) == 0) {
-            return null;
+            while ($miner = mysqli_fetch_object($query)) {
+                $miner = mysqli_fetch_object($this->mysqli->query("SELECT fac_wallet_address, coin_balance, id FROM users WHERE `id`='$miner->user_id'"));
+                array_push($miners, $miner);
+             }
         }
-        while ($miner = mysqli_fetch_object($query)) {
-           $miner = mysqli_fetch_object($this->mysqli->query("SELECT fac_wallet_address, coin_balance, id FROM users WHERE `id`='$miner->user_id'"));
-           array_push($miners, $miner);
-        }
+        
 
         return $miners;
     }
