@@ -17,6 +17,7 @@ use App\Models\User;
 */
 
 class WalletUtil {
+    public static $systemAddress = "9FHIWNESTXKY7ZMA4STQSADZM6IQDHFHKEJYH2LUZT";
 
     public static function generateFACWalletAddress( ) {
        return  "9F".Str::upper(Str::random(30));
