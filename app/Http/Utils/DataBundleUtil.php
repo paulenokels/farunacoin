@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Log;
 class DataBundleUtil {
 
     private static $userId = "CK100200689";
-    private static $apiKey = "67H024Q5DDMK08M01T0N7GZ5ZC42ZD6008O4TLTHC4RX08U6972HA63G1K9V8MIO";
+    private static $apiKey = "16T24343P26ZRW3KHHYTZ5I5Y42A8SUNC3P64N9UH413R71V89MXG5SN445N7I8S";
 
     public static function purchaseBundle( $networkCode, $planSize, $mobileNumber, $reference) {
         //Log::Info($request->reference);
